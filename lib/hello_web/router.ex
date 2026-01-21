@@ -17,17 +17,21 @@ defmodule HelloWeb.Router do
   scope "/", HelloWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    # get "/", PageController, :home
 
-    get "/todos", TodoController, :index
+    # get "/todos", TodoController, :index
 
-    get "/todos/new", TodoController, :new
-    get "/todos/:id", TodoController, :show
-    
-    post "/todos", TodoController, :create
-    get "/todos/:id/edit", TodoController, :edit
-    put "/todos/:id", TodoController, :update
-    delete "/todos/:id", TodoController, :delete
+    # get "/todos/new", TodoController, :new
+    # get "/todos/:id", TodoController, :show
+
+    # post "/todos", TodoController, :create
+    # get "/todos/:id/edit", TodoController, :edit
+
+    # put "/todos/:id", TodoController, :update
+    # patch "/todos/:id", TodoController, :update
+    # delete "/todos/:id", TodoController, :delete
+
+    resources "/todos", TodoController
   end
 
   # Other scopes may use custom stacks.
