@@ -1,0 +1,9 @@
+<.form :let={f} for={@changeset} action={@action}>
+  <.input field={f[:title]} type="text" label="Title" />
+  <.input field={f[:completed]} type="checkbox" label="Completed" />
+  <.input field={f[:priority]} type="text" label="Priority" />
+  <footer>
+    <.button variant="primary">Save Todo</.button>
+    <.button :if={@return_to} href={@return_to}>Cancel</.button>
+  </footer>
+</.form>

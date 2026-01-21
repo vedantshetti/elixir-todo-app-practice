@@ -18,6 +18,16 @@ defmodule HelloWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+
+    get "/todos", TodoController, :index
+
+    get "/todos/new", TodoController, :new
+    get "/todos/:id", TodoController, :show
+    
+    post "/todos", TodoController, :create
+    get "/todos/:id/edit", TodoController, :edit
+    put "/todos/:id", TodoController, :update
+    delete "/todos/:id", TodoController, :delete
   end
 
   # Other scopes may use custom stacks.
